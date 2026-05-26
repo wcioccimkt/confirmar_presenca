@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noite de Massas - Loja Maçônica Rosa Negra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0b1a30; 
+            background-image: radial-gradient(circle, #142c4f 0%, #050d1a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Molduras laterais elegantes em dourado */
+        body::before, body::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 12px;
+            background: linear-gradient(to bottom, #d4af37, #aa7c11, #ffe07d, #aa7c11, #d4af37);
+            z-index: 10;
+        }
+        body::before { left: 0; }
+        body::after { right: 0; }
+
+        .container {
+            max-width: 550px;
+            width: 90%;
+            margin: 50px auto;
+            background: rgba(11, 26, 48, 0.9);
+            border: 2px solid #d4af37;
+            border-radius: 4px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), inset 0 0 25px rgba(212, 175, 55, 0.2);
+            z-index: 2;
+            backdrop-filter: blur(8px);
+        }
+
+        /* Elementos litúrgicos/clássicos */
+        .emblem-header {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: #d4af37;
+            letter-spacing: 6px;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .divider {
+            height: 2px;
+            width: 70%;
+            background: linear-gradient(to right, transparent, #d4af37, #ffe07d, #d4af37, transparent);
+            margin: 25px auto;
+        }
+
+        .event-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin: 15px 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: linear-gradient(to right, #ffffff, #ffe07d, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .intro-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #e0e6ed;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        /* Informações do Evento */
+        .info-section {
+            margin: 25px 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            color: #ffe07d;
+            font-weight: 600;
+        }
+
+        .address {
+            font-style: normal;
+            margin-top: 15px;
+            color: #cbd5e1;
+            font-size: 1rem;
+        }
+
+        /* Card de Investimento */
+        .price-card {
+            background: rgba(212, 175, 55, 0.06);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 6px;
+            padding: 22px;
+            margin: 30px auto;
+            max-width: 380px;
+            box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.1);
+        }
+
+        .price-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #94a3b8;
+            margin-bottom: 5px;
+        }
+
+        .price-value {
+            font-family: 'Cinzel', serif;
+            font-size: 2.4rem;
+            color: #d4af37;
+            font-weight: 700;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .price-note {
+            font-size: 0.85rem;
+            color: #f1f5f9;
+            margin-top: 8px;
+            font-style: italic;
+            letter-spacing: 0.5px;
+        }
+
+        /* Chamada para Ação (CTA) com o novo link fornecido */
+        .btn-cta {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 16px 40px;
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #050d1a;
+            background: linear-gradient(135deg, #ffe07d 0%, #d4af37 50%, #aa7c11 100%);
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+            background: linear-gradient(135deg, #ffffff 0%, #ffe07d 50%, #d4af37 100%);
+        }
+
+        .btn-cta:active {
+            transform: translateY(-1px);
+        }
+
+        .rsvp-deadline {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        /* Pavimento Mosaico na Base (Piso Xadrez Maçônico) */
+        .checkerboard-footer {
+            width: 100%;
+            height: 70px;
+            background-color: #ffffff;
+            background-image: 
+                linear-gradient(45deg, #111111 25%, transparent 25%), 
+                linear-gradient(-45deg, #111111 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #111111 75%), 
+                linear-gradient(-45deg, transparent 75%, #111111 75%);
+            background-size: 40px 40px;
+            background-position: 0 0, 0 20px, 20px -20px, -20px 0;
+            border-top: 4px solid #d4af37;
+            z-index: 1;
+        }
+
+        /* Ajustes de Responsividade */
+        @media (max-width: 480px) {
+            .emblem-header { font-size: 1.8rem; }
+            .event-title { font-size: 1.8rem; }
+            .container { padding: 35px 20px; margin: 25px auto; }
+            .btn-cta { width: 100%; padding: 16px 10px; font-size: 1rem; }
+            .price-value { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Cabeçalho Litúrgico -->
+        <div class="emblem-header">A∴ R∴ L∴ S∴</div>
+        <div class="subtitle">Rosa Negra</div>
+        
+        <div class="divider"></div>
+        
+        <!-- Título Principal -->
+        <h1 class="event-title">Noite de Massas</h1>
+        
+        <p class="intro-text">
+            Temos a honra de convidar os queridos irmãos, cunhadas, sobrinhos e amigos para uma agradável noite de celebração, fraternidade e o melhor da culinária italiana.
+        </p>
+        
+        <div class="divider"></div>
+        
+        <!-- Detalhes do Encontro -->
+        <div class="info-section">
+            <p><strong>Data:</strong> <span class="highlight">12 de Setembro de 2026</span></p>
+            <p><strong>Horário:</strong> <span class="highlight">19h30</span></p>
+            
+            <div class="address">
+                <p><strong>Local:</strong> Educandário Santista</p>
+                <p>Av. Conselheiro Nébias, 680 — Santos/SP</p>
+            </div>
+        </div>
+        
+        <!-- Card de Investimento Atualizado -->
+        <div class="price-card">
+            <div class="price-label">Valor do Convite</div>
+            <div class="price-value">R$ 75,00</div>
+            <div class="price-note">* Bebidas à parte</div>
+        </div>
+        
+        <p class="rsvp-deadline">Para nos estruturarmos e melhor recebê-lo, confirme sua presença:</p>
+        
+        <!-- Chamada para Ação com o Link do WhatsApp Atualizado -->
+        <a href="https://wa.me/5513991779237" target="_blank" class="btn-cta">
+            Confirmar Presença
+        </a>
+    </div>
+
+    <!-- Pavimento Mosaico Inspirado na Referência -->
+    <div class="checkerboard-footer"></div>
+
+</body>
+</html>
